@@ -10,13 +10,13 @@ This project checks weather redis and mysql are running and returns a json.
 ## Running
 
 You can run the Docker environment using [docker-compose](https://docs.docker.com/compose/):
-    $ cd docker
-    $ docker-compose up -d
+    $ docker-compose -f docker/docker-compose.yml build
+    $ docker-compose -f docker/docker-compose.yml up -d
 
 You can run one-shot command inside the `symfony` service container:
 
-    $ docker-compose run php composer install
-    $ docker-compose run php php app/console cache:clear
+    $ docker-compose -f docker/docker-compose.yml run php composer install
+    $ docker-compose -f docker/docker-compose.yml run php php app/console cache:clear
     
 You can try it in your browser : `localhost/status/`
 
@@ -26,5 +26,5 @@ To disable `redis` or `mysql`, change the `parameters.yml`
 
 Tests can be played
 
-    $ docker-compose run php vendor/bin/phpunit
+    $ docker-compose -f docker/docker-compose.yml run php vendor/bin/phpunit
 
