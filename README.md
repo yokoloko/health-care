@@ -10,6 +10,7 @@ This project checks weather redis and mysql are running and returns a json.
 ## Running
 
 You can run the Docker environment using [docker-compose](https://docs.docker.com/compose/):
+
     $ docker-compose -f docker/docker-compose.yml build
     $ docker-compose -f docker/docker-compose.yml up -d
 
